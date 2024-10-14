@@ -1,3 +1,3 @@
 # Rails-Intro-Project
 
-antoher update on README.md
+This is the record by Rails-Intro-Project.
