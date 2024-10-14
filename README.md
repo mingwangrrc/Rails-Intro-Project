@@ -4,7 +4,9 @@
 
 ### 1.1 - Describe Datasets
 
-I select the data source "Daily Temperature of Major Cities" from kaggle, the download URL is:https://www.kaggle.com/datasets/sudalairajkumar/daily-temperature-of-major-cities?resource=download. It shows temperature of major cities of the world daily, and the temperature values is present in "city_temperature.csv" file. 
+I select the data source "Daily Temperature of Major Cities" from kaggle, the download URL is: https://www.kaggle.com/datasets/sudalairajkumar/daily-temperature-of-major-cities?resource=download.
+
+It shows temperature of major cities of the world daily, and the temperature values is present in "city_temperature.csv" file. 
 
 As data is structed by regin, country, state, city, date, averate temperature columns. I'll use the database and split it into multiple table and columns. So I need to create databases below:
 
