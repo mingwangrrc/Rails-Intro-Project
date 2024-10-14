@@ -22,3 +22,16 @@ Besides, I'll fake a Weather table, and contains columns include: id, weather, c
 ## 1.2 - Database ERD
 
 ![Database ERD](https://github.com/mingwangrrc/Rails-Intro-Project/blob/main/Database%20ERD.png)
+
+
+## 1.3 AR Models
+
+Use Rails to generate the Active Record models and tables required.
+
+Commands to generate below.
+
+### 1.3.1 Regin
+
+```bash
+rails generate model Regin name:string
+```
