@@ -15,3 +15,5 @@ As data is structed by regin, country, state, city, date, averate temperature co
 Besides, I'll fake a Weather table, and contains columns include: id, weather, city_id, date_id
 
 ## 1.2 - Database ERD
+
+![Database ERD](https://github.com/mingwangrrc/Rails-Intro-Project/blob/main/Database%20ERD.png)
