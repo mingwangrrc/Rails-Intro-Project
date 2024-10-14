@@ -35,3 +35,9 @@ Commands to generate below.
 ```bash
 rails generate model Regin name:string
 ```
+
+### 1.3.2 Country
+
+```bash
+rails generate model Country name:string regin_id:references
+```
