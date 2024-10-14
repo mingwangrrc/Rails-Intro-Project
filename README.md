@@ -96,3 +96,10 @@ Add multiple ActiveRecord associations to my models.
 	🕯️ 1.5 Two of more one-to-many associations: Weather and Temperations
 	💡 1.5 At least one one-to-many and one many-to-many association: Implemented below.
 	🔥 1.5 Two or more many-to-many associations: implement by City and RecordDate model
+
+
+
+## 1.6 - Validations
+
+Add two or more appropriate validations to all of my ActiveRecord models: add presence validates on City, Country, Regin, State model
+
