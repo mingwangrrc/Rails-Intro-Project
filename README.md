@@ -63,6 +63,12 @@ rails generate model City name:string state_id:references
 ```bash
 rails generate model City name:string state_id:references
 ```
+o
+### 1.3.8 Date
+
+```bash
+rails generate model RecordDate date:string
+```
 
 
 ## 1.4 - At least 1 model Association
