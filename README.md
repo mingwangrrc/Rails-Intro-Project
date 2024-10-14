@@ -63,11 +63,23 @@ rails generate model City name:string state_id:references
 ```bash
 rails generate model City name:string state_id:references
 ```
-o
-### 1.3.8 Date
+
+### 1.3.5 Date
 
 ```bash
 rails generate model RecordDate date:string
+```
+
+### 1.3.6 Weather
+
+```bash
+rails generate model Weather weather:string record_date_id:string city_id:string
+```
+
+### 1.3.7 Temperature
+
+```bash
+rails generate model Temperature avg_temp:string record_date_id:string city_id:string
 ```
 
 
