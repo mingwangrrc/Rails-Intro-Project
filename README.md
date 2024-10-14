@@ -86,3 +86,13 @@ rails generate model Temperature avg_temp:string record_date_id:string city_id:s
 ## 1.4 - At least 1 model Association
 
 Regin, Country, State, City model association is added.
+
+
+
+## 1.5 - Model Associations
+
+Add multiple ActiveRecord associations to my models.
+
+	🕯️ 1.5 Two of more one-to-many associations: Weather and Temperations
+	💡 1.5 At least one one-to-many and one many-to-many association: Implemented below.
+	🔥 1.5 Two or more many-to-many associations: implement by City and RecordDate model
