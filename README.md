@@ -41,3 +41,9 @@ rails generate model Regin name:string
 ```bash
 rails generate model Country name:string regin_id:references
 ```
+
+### 1.3.3 State
+
+```bash
+rails generate model State name:string contry_id:references
+```
