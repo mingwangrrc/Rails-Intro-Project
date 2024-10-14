@@ -10,13 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_10_14_155938) do
+ActiveRecord::Schema[7.1].define(version: 2024_10_14_161604) do
+  create_table "cities", force: :cascade do |t|
+    t.string "name"
+    t.integer "state_id_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["state_id_id"], name: "index_cities_on_state_id_id"
+  end
+
   create_table "countries", force: :cascade do |t|
     t.string "name"
     t.integer "regin_id_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["regin_id_id"], name: "index_countries_on_regin_id_id"
+  end
+
+  create_table "record_dates", force: :cascade do |t|
+    t.string "date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "regins", force: :cascade do |t|
@@ -33,6 +47,23 @@ ActiveRecord::Schema[7.1].define(version: 2024_10_14_155938) do
     t.index ["contry_id_id"], name: "index_states_on_contry_id_id"
   end
 
+  create_table "temperatures", force: :cascade do |t|
+    t.string "avg_temp"
+    t.string "record_date_id"
+    t.string "city_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "weathers", force: :cascade do |t|
+    t.string "weather"
+    t.string "record_date_id"
+    t.string "city_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_foreign_key "cities", "state_ids"
   add_foreign_key "countries", "regin_ids"
   add_foreign_key "states", "contry_ids"
 end
