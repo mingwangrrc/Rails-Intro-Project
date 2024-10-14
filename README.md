@@ -28,6 +28,10 @@ Besides, I'll fake a Weather table, and contains columns include: id, weather, c
 
 Use Rails to generate the Active Record models and tables required.
 
+Two tables are created and will be populated with data in 1.7.
+
+Three t1.2	d and will be populated with data in 1.7.
+
 Commands to generate below.
 
 ### 1.3.1 Regin
@@ -53,3 +57,14 @@ rails generate model State name:string contry_id:references
 ```bash
 rails generate model City name:string state_id:references
 ```
+
+### 1.3.4 City
+
+```bash
+rails generate model City name:string state_id:references
+```
+
+
+## 1.4 - At least 1 model Association
+
+Regin, Country, State, City model association is added.
