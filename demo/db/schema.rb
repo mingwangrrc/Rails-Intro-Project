@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_10_14_155309) do
+ActiveRecord::Schema[7.1].define(version: 2024_10_14_155938) do
   create_table "countries", force: :cascade do |t|
     t.string "name"
     t.integer "regin_id_id", null: false
@@ -25,5 +25,14 @@ ActiveRecord::Schema[7.1].define(version: 2024_10_14_155309) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "states", force: :cascade do |t|
+    t.string "name"
+    t.integer "contry_id_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["contry_id_id"], name: "index_states_on_contry_id_id"
+  end
+
   add_foreign_key "countries", "regin_ids"
+  add_foreign_key "states", "contry_ids"
 end
