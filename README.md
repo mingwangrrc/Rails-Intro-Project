@@ -103,3 +103,12 @@ Add multiple ActiveRecord associations to my models.
 
 Add two or more appropriate validations to all of my ActiveRecord models: add presence validates on City, Country, Regin, State model
 
+
+## 1.7 - Data Sources
+
+Write the seeds.rb script to pull in the data from my sources(city_temperature.csv) into my database.
+
+    🕯️ 1.7 Data is pulled from a single data source. (Faker is 1 source)
+	💡 1.7 Data is pulled from two data sources.
+    🔥 1.7 Data is pulled from three or more data sources.
+
