@@ -2,8 +2,8 @@
 
 one:
   name: MyString
-  state_id: one
+  state: one
 
 two:
   name: MyString
-  state_id: two
+  state: two

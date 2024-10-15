@@ -2,8 +2,8 @@
 
 one:
   name: MyString
-  regin_id: one
+  regin: one
 
 two:
   name: MyString
-  regin_id: two
+  regin: two

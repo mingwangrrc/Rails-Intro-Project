@@ -2,10 +2,10 @@
 
 one:
   avg_temp: MyString
-  record_date_id: MyString
-  city_id: MyString
+  record_date: one
+  city: one
 
 two:
   avg_temp: MyString
-  record_date_id: MyString
-  city_id: MyString
+  record_date: two
+  city: two

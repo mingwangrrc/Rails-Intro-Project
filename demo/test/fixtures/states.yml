@@ -2,8 +2,8 @@
 
 one:
   name: MyString
-  contry_id: one
+  country: one
 
 two:
   name: MyString
-  contry_id: two
+  country: two
