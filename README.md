@@ -43,22 +43,22 @@ rails generate model Regin name:string
 ### 1.3.2 Country
 
 ```bash
-rails generate model Country name:string regin_id:references
+rails generate model Country name:string regin:references
 ```
 
 ### 1.3.3 State
 
 ```bash
-rails generate model State name:string contry_id:references
+rails generate model State name:string country:references
 ```
 
 ### 1.3.4 City
 
 ```bash
-rails generate model City name:string state_id:references
+rails generate model City name:string state:references
 ```
 
-### 1.3.5 Date
+### 1.3.5 RecordDate
 
 ```bash
 rails generate model RecordDate date:string
@@ -67,12 +67,13 @@ rails generate model RecordDate date:string
 ### 1.3.6 Weather
 
 ```bash
-rails generate model Weather weather:string record_date_id:string city_id:string
+rails generate model Weather weather:string record_date:references city:references 
 ```
 
 ### 1.3.7 Temperature
 
 ```bash
+rails generate model Temperature avg_temp:string record_date:references city:references 
 rails generate model Temperature avg_temp:string record_date_id:string city_id:string
 ```
 

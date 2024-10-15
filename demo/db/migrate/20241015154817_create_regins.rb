@@ -1,0 +1,9 @@
+class CreateRegins < ActiveRecord::Migration[7.1]
+  def change
+    create_table :regins do |t|
+      t.string :name
+
+      t.timestamps
+    end
+  end
+end

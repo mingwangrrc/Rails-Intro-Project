@@ -1,0 +1,2 @@
+class Regin < ApplicationRecord
+end
