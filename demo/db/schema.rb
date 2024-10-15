@@ -41,10 +41,10 @@ ActiveRecord::Schema[7.1].define(version: 2024_10_14_161604) do
 
   create_table "states", force: :cascade do |t|
     t.string "name"
-    t.integer "contry_id_id", null: false
+    t.integer "country_id_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["contry_id_id"], name: "index_states_on_contry_id_id"
+    t.index ["country_id_id"], name: "index_states_on_country_id_id"
   end
 
   create_table "temperatures", force: :cascade do |t|
@@ -65,5 +65,5 @@ ActiveRecord::Schema[7.1].define(version: 2024_10_14_161604) do
 
   add_foreign_key "cities", "state_ids"
   add_foreign_key "countries", "regin_ids"
-  add_foreign_key "states", "contry_ids"
+  add_foreign_key "states", "country_ids"
 end

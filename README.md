@@ -58,12 +58,6 @@ rails generate model State name:string contry_id:references
 rails generate model City name:string state_id:references
 ```
 
-### 1.3.4 City
-
-```bash
-rails generate model City name:string state_id:references
-```
-
 ### 1.3.5 Date
 
 ```bash
