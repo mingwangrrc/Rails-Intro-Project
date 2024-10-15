@@ -74,7 +74,6 @@ rails generate model Weather weather:string record_date:references city:referenc
 
 ```bash
 rails generate model Temperature avg_temp:string record_date:references city:references 
-rails generate model Temperature avg_temp:string record_date_id:string city_id:string
 ```
 
 
