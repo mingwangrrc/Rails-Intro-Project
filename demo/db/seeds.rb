@@ -11,12 +11,27 @@
 
 require 'csv'
 
-csv_text = File.read(Rails.root.join('db', 'seeds', 'city_temperature.csv'))
-csv = CSV.parse(csv_text, :headers => true)
+filename = File.read(Rails.root.join('db', 'seeds', 'city_temperature.csv'))
+# csv = CSV.parse(csv_text, :headers => true)
 
-csv.each do |row|
-  destination = Destination.new
-  destination.name = row['name']
-  destination.description = row['description']
-  destination.save
+# csv.each do |row|
+  # puts row['City']
+  # destination = Destination.new
+  # destination.name = row['name']
+  # destination.description = row['description']
+  # destination.save
+# end
+
+
+CSV.foreach(filename, headers: true) do |row|
+  puts row["Region"], row["Country"], row["state"], row["City"], row["Year"], row["AvgTemperature"]
 end
+
+
+# ,Month,Day,Year,
+      # Course.create!(
+        # title: row["Title"],
+        # description: row["Description"],
+        # status: row["Status"]
+      # )
+    # end
