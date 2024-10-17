@@ -11,7 +11,9 @@
 
 require 'csv'
 
-filename = File.read(Rails.root.join('db', 'seeds', 'city_temperature.csv'))
+filename = Rails.root.join('db', 'seeds', 'city_temperature.csv')
+# filename = Rails.root.join('db', 'seeds', 'city_temperature_origin.csv')
+puts filename
 # csv = CSV.parse(csv_text, :headers => true)
 
 # csv.each do |row|
@@ -24,7 +26,11 @@ filename = File.read(Rails.root.join('db', 'seeds', 'city_temperature.csv'))
 
 
 CSV.foreach(filename, headers: true) do |row|
-  puts row["Region"], row["Country"], row["state"], row["City"], row["Year"], row["AvgTemperature"]
+  # puts row["Region"], row["Country"], row["state"], row["City"], row["Year"], row["AvgTemperature"]
+  Regin.create(name: row["Region"])
+  Country.create(name: row["Country"])
+  State.create(name: row["State"])
+  City.create(name: row["City"])
 end
 
 
