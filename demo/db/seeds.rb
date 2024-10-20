@@ -27,10 +27,11 @@ puts filename
 
 CSV.foreach(filename, headers: true) do |row|
   # puts row["Region"], row["Country"], row["state"], row["City"], row["Year"], row["AvgTemperature"]
-  Regin.create(name: row["Region"])
-  Country.create(name: row["Country"])
-  State.create(name: row["State"])
-  City.create(name: row["City"])
+  regin = Regin.find_or_create_by(name: row["Region"])
+  country = Country.find_or_create_by(name: row["Country"], regin: regin)
+  state_name = row["State"] ? row["State"] : "N/A"
+  state = State.find_or_create_by(name: state_name, country: country)
+  city = City.find_or_create_by(name: row["City"], state: state)
 end
 
 
