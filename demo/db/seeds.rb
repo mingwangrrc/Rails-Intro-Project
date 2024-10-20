@@ -32,6 +32,14 @@ CSV.foreach(filename, headers: true) do |row|
   state_name = row["State"] ? row["State"] : "N/A"
   state = State.find_or_create_by(name: state_name, country: country)
   city = City.find_or_create_by(name: row["City"], state: state)
+
+  year, month, day = row["Year"].to_i, row["Month"].to_i, row["Day"].to_i
+  date = Date.new(year, month, day)
+  date = RecordDate.find_or_create_by(date: date.to_fs(:db))
+
+  avg_temp = row["AvgTemperature"]
+  temperature = Temperature.find_or_create_by(avg_temp: avg_temp, city:city, record_date: date)
+  puts temperature
 end
 
 

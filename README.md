@@ -106,3 +106,9 @@ Write the seeds.rb script to pull in the data from my sources(city_temperature.c
 	💡 1.7 Data is pulled from two data sources.
     🔥 1.7 Data is pulled from three or more data sources.
 
+
+to import data:
+
+```bash
+rails db:reset
+```
