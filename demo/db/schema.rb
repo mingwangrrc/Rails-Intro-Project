@@ -10,68 +10,55 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_10_15_155112) do
+ActiveRecord::Schema[7.1].define(version: 2024_10_21_142318) do
   create_table "cities", force: :cascade do |t|
-    t.string "name"
-    t.integer "state_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["state_id"], name: "index_cities_on_state_id"
-  end
-
-  create_table "countries", force: :cascade do |t|
-    t.string "name"
-    t.integer "regin_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["regin_id"], name: "index_countries_on_regin_id"
-  end
-
-  create_table "record_dates", force: :cascade do |t|
-    t.string "date"
+    t.string "city"
+    t.string "state"
+    t.string "country"
+    t.string "Region"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "regins", force: :cascade do |t|
-    t.string "name"
+  create_table "comments", force: :cascade do |t|
+    t.string "comment"
+    t.date "date"
+    t.integer "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "states", force: :cascade do |t|
-    t.string "name"
-    t.integer "country_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["country_id"], name: "index_states_on_country_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
   create_table "temperatures", force: :cascade do |t|
-    t.string "avg_temp"
-    t.integer "record_date_id", null: false
+    t.float "avg_temp"
+    t.date "date"
     t.integer "city_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["city_id"], name: "index_temperatures_on_city_id"
-    t.index ["record_date_id"], name: "index_temperatures_on_record_date_id"
   end
 
-  create_table "weathers", force: :cascade do |t|
-    t.string "weather"
-    t.integer "record_date_id", null: false
-    t.integer "city_id", null: false
+  create_table "temperatures_comments", id: false, force: :cascade do |t|
+    t.integer "temperature_id"
+    t.integer "comment_id"
+    t.index ["comment_id"], name: "index_temperatures_comments_on_comment_id"
+    t.index ["temperature_id"], name: "index_temperatures_comments_on_temperature_id"
+  end
+
+  create_table "temperatures_users", id: false, force: :cascade do |t|
+    t.integer "temperature_id"
+    t.integer "user_id"
+    t.index ["temperature_id"], name: "index_temperatures_users_on_temperature_id"
+    t.index ["user_id"], name: "index_temperatures_users_on_user_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "username"
+    t.string "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["city_id"], name: "index_weathers_on_city_id"
-    t.index ["record_date_id"], name: "index_weathers_on_record_date_id"
   end
 
-  add_foreign_key "cities", "states"
-  add_foreign_key "countries", "regins"
-  add_foreign_key "states", "countries"
+  add_foreign_key "comments", "users"
   add_foreign_key "temperatures", "cities"
-  add_foreign_key "temperatures", "record_dates"
-  add_foreign_key "weathers", "cities"
-  add_foreign_key "weathers", "record_dates"
 end

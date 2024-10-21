@@ -10,18 +10,15 @@ It shows temperature of major cities of the world daily, and the temperature val
 
 As data is structed by regin, country, state, city, date, averate temperature columns. I'll use the database and split it into multiple table and columns. So I need to create databases below:
 
-1. Regin, columns include: id, regin_name.
-2. Country, columns include: id, country_name, belong_regin
-3. State, columns include: id, state_name, belong_country
-4. City, columns include: id, city_name, belong_state
-5. Date, columns include: id, date
-6. Temperature: columns include: id, averate_temp, city_id, date_id
+1. City, columns include: id, city name, state name, country name, region name
+2. User, columns include: id, username, email
+3. Temperature, columns include: id, average temperature, date, city ID
+4. Comment, columns include: id, comment content, user ID, date
 
-Besides, I'll fake a Weather table, and contains columns include: id, weather, city_id, date_id
 
 ## 1.2 - Database ERD
 
-![Database ERD](https://github.com/mingwangrrc/Rails-Intro-Project/blob/main/Database%20ERD.png)
+![Database ERD](./Database%20ERD.png)
 
 
 ## 1.3 AR Models
@@ -34,46 +31,40 @@ Three t1.2	d and will be populated with data in 1.7.
 
 Commands to generate below.
 
-### 1.3.1 Regin
+### 1.3.1 City
 
 ```bash
-rails generate model Regin name:string
+rails generate model city city:string state:string country:string Region:string
 ```
 
-### 1.3.2 Country
+
+### 1.3.2 User
 
 ```bash
-rails generate model Country name:string regin:references
+rails generate model User username:string email:string
 ```
 
-### 1.3.3 State
+### 1.3.3 Temperature
 
 ```bash
-rails generate model State name:string country:references
+rails generate model Temperature avg_temp:float date:date city:references
 ```
 
-### 1.3.4 City
+
+### 1.3.4 Comment
 
 ```bash
-rails generate model City name:string state:references
+rails generate model Comment comment:string date:date user:references
 ```
 
-### 1.3.5 RecordDate
-
+### 1.3.5 TemperatureUser
 ```bash
-rails generate model RecordDate date:string
+rails generate model TemperatureUser user:references temperature:references
 ```
 
-### 1.3.6 Weather
-
+### 1.3.6 TemperatureComment
 ```bash
-rails generate model Weather weather:string record_date:references city:references 
-```
-
-### 1.3.7 Temperature
-
-```bash
-rails generate model Temperature avg_temp:string record_date:references city:references 
+rails generate model TemperatureComment user:references temperature:references
 ```
 
 

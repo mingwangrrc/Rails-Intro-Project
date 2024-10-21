@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  avg_temp: 1.5
+  date: 2024-10-21
+  city: one
+  user: one
+  comment: one
+
+two:
+  avg_temp: 1.5
+  date: 2024-10-21
+  city: two
+  user: two
+  comment: two

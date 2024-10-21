@@ -10,36 +10,34 @@
 
 
 require 'csv'
+require 'faker'
 
 filename = Rails.root.join('db', 'seeds', 'city_temperature.csv')
-# filename = Rails.root.join('db', 'seeds', 'city_temperature_origin.csv')
 puts filename
-# csv = CSV.parse(csv_text, :headers => true)
 
-# csv.each do |row|
-  # puts row['City']
-  # destination = Destination.new
-  # destination.name = row['name']
-  # destination.description = row['description']
-  # destination.save
-# end
+# Mock 100 users
+100.times {
+  username = Faker::Name.unique.name
+  email = Faker::Internet.email(name: username, domain: 'gmail.com', separators: ['_'])
+  User.create!(username: username, email:email)
+}
 
 
 CSV.foreach(filename, headers: true) do |row|
-  # puts row["Region"], row["Country"], row["state"], row["City"], row["Year"], row["AvgTemperature"]
-  regin = Regin.find_or_create_by(name: row["Region"])
-  country = Country.find_or_create_by(name: row["Country"], regin: regin)
-  state_name = row["State"] ? row["State"] : "N/A"
-  state = State.find_or_create_by(name: state_name, country: country)
-  city = City.find_or_create_by(name: row["City"], state: state)
+  city = City.find_or_create_by!(city: row["City"], state: row["State"], country: row["Country"], Region: row["Region"])
 
   year, month, day = row["Year"].to_i, row["Month"].to_i, row["Day"].to_i
   date = Date.new(year, month, day)
-  date = RecordDate.find_or_create_by(date: date.to_fs(:db))
 
-  avg_temp = row["AvgTemperature"]
-  temperature = Temperature.find_or_create_by(avg_temp: avg_temp, city:city, record_date: date)
-  puts temperature
+  temperature = Temperature.find_or_create_by!(avg_temp: row["AvgTemperature"], city:city, date:date)
+
+  # choose 2 user and do the comment
+  2.times {
+    user = User.order("RANDOM()").take
+    comment = Comment.create!(comment: Faker::Emotion.adjective, user:user, date:date)
+    temperature.users << user
+    temperature.comments << comment
+  }
 end
 
 
