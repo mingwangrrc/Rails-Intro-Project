@@ -1,0 +1,22 @@
+<h1>About#about</h1>
+
+<h1>Rails-Intro-Project</h1>
+<h2>1 - Gathering and Storing Data</h2>
+<h3>1.1 - Describe Datasets</h3>
+<p>I select the data source &quot;Daily Temperature of Major Cities&quot; from kaggle, the download URL is: <a href='https://www.kaggle.com/datasets/sudalairajkumar/daily-temperature-of-major-cities?resource=download' target='_blank' class='url'>https://www.kaggle.com/datasets/sudalairajkumar/daily-temperature-of-major-cities?resource=download</a>.</p>
+<p>It shows temperature of major cities of the world daily, and the temperature values is present in &quot;city_temperature.csv&quot; file. </p>
+<p>As data is structed by regin, country, state, city, date, averate temperature columns. I&#39;ll use the database and split it into multiple table and columns. So I need to create databases below:</p>
+<ol>
+<li>City, columns include: id, city name, state name, country name, region name</li>
+<li>User, columns include: id, username, email</li>
+<li>Temperature, columns include: id, average temperature, date, city ID</li>
+<li>Comment, columns include: id, comment content, user ID, date</li>
+
+</ol>
+<h2>1.2 - Database ERD</h2>
+<p>
+   <%= image_tag "DatabaseERD.png" %> 
+    
+    <%# <img src="./DatabaseERD.png" referrerpolicy="no-referrer" alt="Database ERD"> %>
+    
+</p>
