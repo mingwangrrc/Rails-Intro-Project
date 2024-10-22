@@ -2,6 +2,11 @@
 
 <h1>Cities</h1>
 
+<form action="/cities" method="get">
+  city name: <input type="text" name="city_name" value=<%= params[:city_name] %> />
+  <input type='submit' /> 
+</form>
+
 <div id="cities">
   <% @cities.each do |city| %>
     <%= render city %>

@@ -4,7 +4,12 @@ class CitiesController < ApplicationController
   # GET /cities or /cities.json
   def index
     # @cities = City.all
-    @cities = City.page(params[:page]).per(15)
+    if params[:city_name] != nil
+      @cities = City.where('city like ? ', "%#{params[:city_name]}%").page(params[:page]).per(15)
+    else
+      @cities = City.page(params[:page]).per(15)
+    end
+
   end
 
   # GET /cities/1 or /cities/1.json
