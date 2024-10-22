@@ -1,0 +1,32 @@
+<%= form_with(model: temperature) do |form| %>
+  <% if temperature.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(temperature.errors.count, "error") %> prohibited this temperature from being saved:</h2>
+
+      <ul>
+        <% temperature.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :avg_temp, style: "display: block" %>
+    <%= form.text_field :avg_temp %>
+  </div>
+
+  <div>
+    <%= form.label :date, style: "display: block" %>
+    <%= form.date_field :date %>
+  </div>
+
+  <div>
+    <%= form.label :city_id, style: "display: block" %>
+    <%= form.text_field :city_id %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
