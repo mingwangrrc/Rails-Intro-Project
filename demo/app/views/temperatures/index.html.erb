@@ -2,6 +2,13 @@
 
 <h1>Temperatures</h1>
 
+<% if @temperatures.count > 0 %>
+<p>We have <%= @temperatures.count %> temperature records in current page.</p>
+<% else %>
+<p>We have no temperature records in current page.</p>
+<% end %>
+
+
 <div id="temperatures">
   <% @temperatures.each do |temperature| %>
     <%= render temperature %>
