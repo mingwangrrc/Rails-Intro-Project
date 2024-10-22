@@ -1,6 +1,12 @@
 <p style="color: green"><%= notice %></p>
 
 <%= render @city %>
+  <% @city.temperatures.each do |temperature| %>
+    <%= render temperature %>
+    <p>
+      <%= link_to "Show this temperature", temperature %>
+    </p>
+  <% end %>
 
 <div>
   <%= link_to "Edit this city", edit_city_path(@city) %> |
