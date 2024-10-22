@@ -9,6 +9,8 @@
       <%= link_to "Show this temperature", temperature %>
     </p>
   <% end %>
+
+  <%= paginate @temperatures %>
 </div>
 
 <%= link_to "New temperature", new_temperature_path %>

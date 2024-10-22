@@ -9,6 +9,7 @@
       <%= link_to "Show this city", city %>
     </p>
   <% end %>
+  <%= paginate @cities %>
 </div>
 
 <%= link_to "New city", new_city_path %>

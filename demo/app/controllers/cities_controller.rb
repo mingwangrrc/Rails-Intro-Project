@@ -3,7 +3,8 @@ class CitiesController < ApplicationController
 
   # GET /cities or /cities.json
   def index
-    @cities = City.all
+    # @cities = City.all
+    @cities = City.page(params[:page]).per(15)
   end
 
   # GET /cities/1 or /cities/1.json

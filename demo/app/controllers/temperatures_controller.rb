@@ -3,7 +3,8 @@ class TemperaturesController < ApplicationController
 
   # GET /temperatures or /temperatures.json
   def index
-    @temperatures = Temperature.all
+    # @temperatures = Temperature.all
+    @temperatures = Temperature.page(params[:page]).per(15)
   end
 
   # GET /temperatures/1 or /temperatures/1.json
