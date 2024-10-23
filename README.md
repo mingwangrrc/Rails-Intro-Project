@@ -29,9 +29,11 @@ Two tables are created and will be populated with data in 1.7.
 
 Three t1.2	d and will be populated with data in 1.7.
 
-Commands to generate below.
+Commands to generate below. But We can skip it as migrations are all ready. To make migrations, run `rails db:migrate`
 
 ### 1.3.1 City
+
+
 
 ```bash
 rails generate model city city:string state:string country:string Region:string
@@ -86,7 +88,7 @@ Add multiple ActiveRecord associations to my models.
 
 ## 1.6 - Validations
 
-Add two or more appropriate validations to all of my ActiveRecord models: add presence validates on City, Country, Regin, State model
+Add two or more appropriate validations to all of my ActiveRecord models: add presence validates on City, Comment
 
 
 ## 1.7 - Data Sources
@@ -98,7 +100,7 @@ Write the seeds.rb script to pull in the data from my sources(city_temperature.c
     🔥 1.7 Data is pulled from three or more data sources.
 
 
-to import data:
+to import data (we prepared 1000 records):
 
 ```bash
 rails db:reset
