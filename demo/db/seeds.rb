@@ -27,7 +27,7 @@ i = 1
 CSV.foreach(filename, headers: true) do |row|
   puts i.to_s + "..."
   i += 1
-  city = City.find_or_create_by!(city: row["City"], state: row["State"], country: row["Country"], Region: row["Region"])
+  city = City.find_or_create_by!(city: row["City"], state: row["State"], country: row["Country"], region: row["Region"])
 
   year, month, day = row["Year"].to_i, row["Month"].to_i, row["Day"].to_i
   date = Date.new(year, month, day)
