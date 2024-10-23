@@ -4,7 +4,7 @@ class CreateComments < ActiveRecord::Migration[7.1]
       t.string :comment
       t.date :date
       t.references :user, null: false
-      t.references :temperature, null: true,
+      t.references :temperature, null: true
 
       t.timestamps
     end
